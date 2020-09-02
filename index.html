@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>MindIT</title>
+    <meta name="description" content="MindIT">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+    <!-- <link rel="manifest" href="site.webmanifest"> -->
+    <link rel="icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="icon.png">
+
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <link rel="stylesheet" href="./css/base.css">
+
+    <meta name="theme-color" content="#9999C3">
+</head>
+
+<body>
+    <header class="header-bar">
+        <a href="#" class="header-logo">
+            <h1 class="header-logo-text mind">Mind</h1>
+            <h1 class="header-logo-text it">IT</h1>
+        </a>
+    </header>
+
+    <div class="container-fluid main-wrapper">
+        <hr class="separator">
+        <div class="row">
+            <h2 class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">My Notes</h2>
+        </div>
+        <hr class="separator">
+        <div class="row">
+            <div class="main-container col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
+                <canvas id="editable">
+                    [["Iron Man",true],["Captain America",true],["Black Widow",false]]
+                </canvas>
+                <div id="cursor"></div>
+                <img id="check" src="img/check.svg">
+                <img id="uncheck" src="img/uncheck.svg">
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-bar container-fluid">
+        <div class="row">
+            <!-- <div class="footer-pad container-fluid mt-4"></div> -->
+            <div class="footer-logo-section col-12 col-sm-12 col-md-4 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1 mr-lg-5">
+                <a href="#" class="footer-logo">
+                    <h1 class="footer-logo-text mind">Mind</h1>
+                    <h1 class="footer-logo-text it">IT</h1>
+                </a>
+            </div>
+            <div class="footer-text col-12 col-sm-12 col-md-8 col-lg-7 col-xl-7">
+                <p>We all hate our habit of <span class="font-weight-bold">"forgetting"</span> .</p>
+                <p class="font-italic">MindIT is an easy to use memo app that helps you to enlist and manage tasks. Checklists are always handy tool whether it is shopping list or assignments given by your boss.</p>
+            </div>
+            <div class="copyright col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <div class="copyright container-fluid">
+                    Copyright © 2020 WeShopMall India. All rights reserved.
+                </div>
+    </footer>
+    <script src="./js/streamControlled.js"></script>
+</body>
+
+</html>
