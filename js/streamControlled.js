@@ -34,7 +34,34 @@ let max = (x, y) => {
 let cursorPosXMax = (item = cursorPosY) => memoStream[item][0].length
 let cursorPosYMax = () => memoStream.length - 1
 
-// -------------------Click-------------------
+// -------------------On Clicking outside Canvas-------------------
+
+let deFocusCanvas = event => {
+    if (canvasFocus) {
+        cursor.style.display = "none"
+        container.style.opacity = "0.7"
+        canvasFocus = false
+    }
+}
+window.addEventListener("click", deFocusCanvas)
+
+// -------------------If click in Cell-------------------
+
+let inCell = (x, y) => {
+    if (x >= 64 && y >= 10) {
+        if ((y - 10) % 44 < 30) {
+            let xIndex = Math.round((x - baseX) / stepX),
+                yIndex = Math.floor((y - 10) / 44)
+            if (yIndex <= cursorPosYMax()) {
+                xIndex = min(xIndex, cursorPosXMax(yIndex))
+                return [xIndex, yIndex]
+            }
+        }
+    }
+    return -1
+}
+
+// -------------------If click in Checkbox-------------------
 
 let inCheckbox = (x, y) => {
     if (x >= 16 && x < 64 && y >= 15) {
@@ -47,30 +74,28 @@ let inCheckbox = (x, y) => {
     return -1
 }
 
-// -------------------On Click on Checkbox-------------------
-
-let deFocusCanvas = event => {
-    if (canvasFocus) {
-        cursor.style.display = "none"
-        container.style.opacity = "0.7"
-        canvasFocus = false
-    }
-}
-window.addEventListener("click", deFocusCanvas)
-
-// -------------------On Click on Checkbox-------------------
+// -------------------On Clicking in Canvas-------------------
 
 let locateClick = event => {
+    if (!canvasFocus) {
+        cursor.style.display = "block"
+        container.style.opacity = "1"
+        $("#proxyInput").focus()
+        canvasFocus = true
+    }
+    event.stopPropagation()
+
     let checkboxRegion = inCheckbox(event.layerX, event.layerY)
     if (checkboxRegion != -1) {
         memoStream[checkboxRegion][1] = !memoStream[checkboxRegion][1]
         reprintContent()
-    } else if (!canvasFocus) {
-        cursor.style.display = "block"
-        container.style.opacity = "1"
-        canvasFocus = true
+        return
     }
-    event.stopPropagation()
+    let cellRegion = inCell(event.layerX, event.layerY)
+    if (cellRegion != -1) {
+        [cursorPosX, cursorPosY] = cellRegion
+        moveCursor()
+    }
 }
 canvas.addEventListener("click", locateClick)
 
@@ -78,10 +103,18 @@ canvas.addEventListener("click", locateClick)
 
 let changeCursorToPointer = event => {
     let checkboxRegion = inCheckbox(event.layerX, event.layerY)
-    if (checkboxRegion != -1)
-        canvas.style.cursor = "pointer"
-    else
-        canvas.style.cursor = "text"
+    if (canvasFocus) {
+        if (checkboxRegion != -1) {
+            canvas.style.cursor = "pointer"
+            return
+        }
+        let cellRegion = inCell(event.layerX, event.layerY)
+        if (cellRegion != -1) {
+            canvas.style.cursor = "text"
+            return
+        }
+    }
+    canvas.style.cursor = "default"
 }
 canvas.addEventListener("mousemove", changeCursorToPointer)
 
