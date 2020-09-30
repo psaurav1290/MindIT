@@ -4,13 +4,16 @@
 
 #menu {
     position: absolute;
-    top: 64px;
+    top: 4rem;
     width: 100%;
     background-color: var(--menu_color);
     border-bottom-left-radius: 2rem;
+    position: fixed;
     z-index: 10;
     transform: translateY(-100%);
     transition-duration: var(--menu_transition_time);
+    max-height: calc(100vh - 5rem);
+    overflow: auto;
 }
 
 .menu-separator {
