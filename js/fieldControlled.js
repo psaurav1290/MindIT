@@ -39,8 +39,7 @@ toggleState = event => {
 mergeCells = (currentTextArea) => {
     let currentCell = currentTextArea.parentElement.parentElement
     let previousCell = currentCell.previousElementSibling
-    console.log(previousCell)
-    if (previousCell.classList != "line")
+    if (previousCell.classList != "cell")
         return
     let previousTextArea = previousCell.querySelectorAll("textarea")[1]
     $(currentTextArea).val($(previousTextArea).val() + $(currentTextArea).val())
@@ -97,7 +96,7 @@ let keyPress = event => {
             preventDefault = true
         }
     } else if (event.keyCode == 8) { // BACKSPACE KEY PRESSED
-        if (!event.target.selectionStart && !event.target.selectionEnd) { //Prevents the case of merging in case of backspacing the whole field: When nothing is slected the both selstart and selend are 0
+        if (!event.target.selectionStart && !event.target.selectionEnd) { //When nothing is slected the both selstart and selend are 0. Prevents the case of merging in case of backspacing the whole field.
             mergeCells(event.target)
             preventDefault = true
         }
