@@ -8,10 +8,38 @@
     width: 100%;
     box-sizing: border-box;
     font-size: 16px;
+    --menu_transition_time: 0.5s;
+}
+
+.center-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day {
+    color: black;
+    --menu_color: rgba(0, 0, 0, 0.9);
+    --menu_separator_color: rgb(201, 201, 201);
+    --main_separator_color: rgb(201, 201, 201);
+    --rules_url: "../img/rules-day.svg";
     --theme_1: #E88d67;
     --theme_2: #BB999C;
     --theme_3: #9999C3;
     --theme_4: #7B8CDE;
+    --theme_5: #C0E6DE;
+}
+
+.night {
+    background-color: rgb(70, 70, 70);
+    color: rgb(158, 158, 158);
+    --menu_separator_color: rgb(201, 201, 201);
+    --main_separator_color: rgb(201, 201, 201);
+    --rules_url: "../img/rules-night.svg";
+    --theme_1: #E88d67;
+    --theme_2: #BB999C;
+    --theme_3: #2b2b33;
+    --theme_4: #262a41;
     --theme_5: #C0E6DE;
 }
 
@@ -23,311 +51,3 @@ body {
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
 }
-
-
-/* ---------------------------- */
-/* -------- HEADER BAR -------- */
-/* ---------------------------- */
-
-.header-bar {
-    background-color: var(--theme_3);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 4rem;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 20;
-}
-
-.header-logo {
-    height: 5rem;
-    width: 16rem;
-    padding: 0rem 1rem;
-    background-image: linear-gradient(to top, rgb(212, 77, 18), rgb(230, 118, 70), rgb(241, 189, 167));
-    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    top: 1rem;
-    left: 0.5rem;
-}
-
-.header-logo:hover {
-    box-shadow: 0 0.01rem 0.2rem rgba(255, 255, 255, 0.7) inset;
-    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
-}
-
-.header-logo-text,
-.footer-logo-text {
-    display: block;
-    color: var(--theme_5);
-    margin: 0;
-}
-
-.mind {
-    font-family: "Matura MT Script Capitals";
-}
-
-.it {
-    font-family: "Lucida Sans";
-}
-
-.header-bar a {
-    text-decoration: none;
-}
-
-.header-bar ul {
-    height: 4rem;
-    padding: 0;
-    margin: 0;
-}
-
-.header-bar li {
-    display: inline-block;
-    margin: 0;
-    margin: 0;
-}
-
-.header-link {
-    font-family: "Maiandra GD";
-    font-weight: bold;
-    font-size: 1.1rem;
-    display: inline-block;
-    height: 4rem;
-    line-height: 4rem;
-    color: var(--theme_5);
-    padding: 0 0.3rem;
-    margin: 0;
-}
-
-.header-link:hover {
-    background-color: var(--theme_4);
-    /* box-shadow: 0 -0.5rem 0.5rem rgba(255, 255, 255, 0.1) inset; */
-    color: navy;
-}
-
-/* -------- Media Querries --------- */
-
-@media (min-width: 576px) {
-    .header-link {
-        padding: 0 0.5rem;
-    }
-}
-
-@media (min-width: 768px) {
-    .header-link {
-        padding: 0 1rem;
-    }
-}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-
-
-/* ---------------------------- */
-/* ------- MAIN WRAPPER ------- */
-/* ---------------------------- */
-
-.main-wrapper {
-    margin-top: 5.5rem;
-}
-
-h2 {
-    width: 100%;
-    text-align: right;
-    margin: 0 1rem 0 0;
-    font-family: "Lucida Sans";
-}
-
-.separator {
-    margin: 0.5rem 0;
-}
-
-/* -------- Media Querries --------- */
-
-@media (min-width: 576px) {}
-
-@media (min-width: 768px) {
-    .separator {
-        /* margin: 0.5rem 1rem; */
-    }
-}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-
-
-/* ---------------------------- */
-/* --------- EDITABLE --------- */
-/* ---------------------------- */
-
-.main-container {
-    background-image: url(../img/rules.svg);
-    background-repeat: repeat;
-    background-size: 32px 32px;
-    background-blend-mode: soft-light;
-    max-height: 100vh;
-    overflow: auto;
-    padding: 0 2rem;
-    margin-bottom: 1rem;
-    /* border: solid 1px black; */
-}
-
-#editable {
-    background-color: rgba(255, 255, 255, 0.3);
-    cursor: text;
-    /* border: solid 0.5px var(--theme_1); */
-}
-
-.changeCursorToPointer {
-    cursor: pointer;
-}
-
-#cursor {
-    height: 30px;
-    width: 2px;
-    position: absolute;
-    top: 17px;
-    left: 96px;
-    transform: translateX(0) translateY(0);
-    background-color: black;
-    animation: blink 0.5s infinite linear;
-}
-
-#uncheck,
-#check,
-#proxyInput {
-    display: none;
-}
-
-@keyframes blink {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 0;
-    }
-
-    51% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* -------- Media Querries --------- */
-
-@media (min-width: 576px) {}
-
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}
-
-
-/* ---------------------------- */
-/* -------- FOOTER BAR -------- */
-/* ---------------------------- */
-
-.footer-bar {
-    background-color: var(--theme_3);
-    opacity: 1;
-}
-
-.footer-logo-section {
-    padding-top: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-logo {
-    display: block;
-    width: 100%;
-    max-width: 18rem;
-    padding: 5% 10%;
-    background-image: linear-gradient(to top, rgb(212, 77, 18), rgba(230, 118, 70, 1), rgba(241, 189, 166, 1));
-    text-decoration: none;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.footer-logo:hover {
-    text-decoration: none;
-    box-shadow: 0 0.01rem 0.3rem rgba(255, 255, 255, 0.8) inset;
-    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.7);
-}
-
-.footer-text {
-    color: black;
-    padding-top: 1rem;
-}
-
-.footer-list {
-    list-style: none;
-    padding: 0;
-    overflow-wrap: unset;
-}
-
-.footer-list a {
-    color: var(--theme_5);
-    color: navy;
-    text-decoration: none;
-}
-
-.footer-list a:hover {
-    padding-left: 0.2rem;
-}
-
-.footer-list a:hover {
-    padding-left: 0.2rem;
-}
-
-.footer-list a:hover {
-    padding-left: 0.2rem;
-}
-
-.footer-list li:hover img {
-    margin: 0.4rem 1rem 0.4rem 0;
-}
-
-.footer-list img {
-    height: 1.5rem;
-    margin: 0.4rem 1.5rem 0.4rem 0;
-    filter: invert(0.4) sepia(1) hue-rotate(124deg) saturate(60%) contrast(100) brightness(0.8);
-}
-
-.copyright {
-    color: rgb(43, 43, 43);
-    text-align: center;
-    margin-bottom: 0.5rem;
-}
-
-/* -------- Media Querries --------- */
-
-@media (min-width: 576px) {}
-
-@media (min-width: 768px) {
-    .footer-logo-section {
-        justify-content: flex-start;
-        padding-top: 0;
-    }
-}
-
-@media (min-width: 992px) {}
-
-@media (min-width: 1200px) {}

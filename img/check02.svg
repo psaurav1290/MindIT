@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+  <defs>
+    <radialGradient id="radial-gradient" cx="16" cy="16" r="16" gradientUnits="userSpaceOnUse">
+      <stop offset="0.2" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#ff0" stop-opacity="0.4"/>
+    </radialGradient>
+  </defs>
+  <title>check02</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_3" data-name="Layer 3">
+      <g>
+        <rect width="32" height="32" rx="5" fill="url(#radial-gradient)"/>
+        <path d="M0,19.47A7.81,7.81,0,0,1,.94,19a1.86,1.86,0,0,1,.83-.25,1.46,1.46,0,0,1,.63.2A28.88,28.88,0,0,1,6.49,24c1.21,1.75,2.48,4.05,4,6.4A107.29,107.29,0,0,1,19.45,16,109.1,109.1,0,0,1,32,1.63,72,72,0,0,0,15.82,14a71.06,71.06,0,0,0-6.54,7.73,27.4,27.4,0,0,0-2.91-3.39c-1-.93-2.84-2.47-4.45-1.59a3.13,3.13,0,0,0-1,1A7.72,7.72,0,0,0,0,19.47Z" fill="#cc1919"/>
+      </g>
+    </g>
+  </g>
+</svg>

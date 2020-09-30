@@ -1,0 +1,182 @@
+/* ---------------------------- */
+/* ------- MAIN WRAPPER ------- */
+/* ---------------------------- */
+
+#main-wrapper {
+    margin-top: 5.5rem;
+}
+
+.main-separator {
+    background-color: var(--separator_color);
+    margin: 0.5rem 0;
+}
+
+#main-separator-2{
+    margin-bottom: 1.5rem;
+}
+
+#title-container {
+    width: 100%;
+    margin: 0;
+}
+
+#title-container-name {
+    width: 100%;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Lucida Sans";
+    padding: 0 0rem;
+    border: 0px dotted rgba(0, 0, 0, 0.3);
+    outline: 0;
+}
+
+#title-container-name:focus,
+textarea:focus {
+    border-radius: 0.4rem;
+    /* border: 1px dotted rgba(0, 0, 0, 0.3); */
+    /* background-image: radial-gradient(rgba(255, 255, 255, 0), rgba(255, 102, 0, 0.1)); */
+    box-shadow: 0 0 0.5rem rgba(255, 102, 0, 0.6);
+}
+
+#title-container-time {
+    font-style: oblique;
+    color: gray;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+#main-container {
+    padding: 0.1rem;
+}
+
+#save-btn {
+    float: right;
+}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    .separator {
+        margin: 0.5rem 1rem;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+
+
+/* ---------------------------- */
+/* --------- EDITABLE --------- */
+/* ---------------------------- */
+
+#notepad {
+    background-image: url("../img/rules-day.svg");
+    background-repeat: repeat;
+    background-size: 32px 32px;
+    background-blend-mode: soft-light;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 3rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-right: 1px solid rgba(255, 123, 0, 0.568);
+    border-bottom: 1px solid rgba(255, 123, 0, 0.568);
+    border-radius: 2rem;
+    box-shadow: -0.5rem -0.5rem 1.5rem -1rem black;
+    position: relative;
+}
+
+.vertical-rule {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 123, 0, 0.568);
+}
+
+#vertical-rule-1 {
+    left: 80px;
+}
+
+#vertical-rule-2 {
+    left: 84px;
+}
+
+/* #notepad * {
+    border: 0.5px solid black;
+} */
+
+.cell {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-items: flex-start;
+    padding: 0.25rem 0;
+}
+
+.columnBox {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    display: inline-block;
+    margin: 0 1rem 0 0;
+}
+
+.box {
+    display: inline-block;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin-top: 0;
+    border: solid 0.3rem rgba(0, 0, 0, 0.6);
+    border-radius: 20%;
+    background-image: url(../img/uncheck01.svg);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.checked {
+    background-image: url(../img/check02.svg);
+}
+
+.columnLine {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    width: calc(100% - 77px);
+    min-height: 45px;
+    display: inline-block;
+    margin: 0 0 0 1rem;
+    background-color: rgba(122, 52, 124, 0);
+}
+
+.line {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(255, 217, 0, 0);
+    outline: 0;
+}
+
+.line:focus {}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    .columnBox {
+        margin: 0 2rem 0 0;
+    }
+
+    .columnLine {
+        width: calc(100% - 77px);
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

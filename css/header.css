@@ -1,0 +1,123 @@
+/* ---------------------------- */
+/* -------- HEADER BAR -------- */
+/* ---------------------------- */
+
+.header-bar {
+    background-color: var(--theme_3);
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.header-logo {
+    height: 5rem;
+    width: 16rem;
+    max-width: calc(100% - 70px);
+    padding: 0rem 1rem;
+    background-image: linear-gradient(to top, rgb(212, 77, 18), rgb(230, 118, 70), rgb(241, 189, 167));
+    box-shadow: 0 0.01rem 0.2rem rgba(255, 255, 255, 0.7) inset;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
+    /* box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.6); */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    z-index: 30;
+}
+
+.header-logo:hover {
+    /* box-shadow: 0 0.01rem 0.2rem rgba(255, 255, 255, 0.7) inset;
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.6); */
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
+    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0);
+}
+
+.header-logo-text,
+.footer-logo-text {
+    display: block;
+    color: var(--theme_5);
+    margin: 0;
+}
+
+.mind {
+    font-family: "Matura MT Script Capitals";
+}
+
+.it {
+    font-family: "Lucida Sans";
+}
+
+.header-bar a {
+    text-decoration: none;
+}
+
+.header-bar ul {
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    float: right;
+    transition-duration: var(--menu_transition_time);
+}
+
+.wide-screen {
+    display: none !important;
+}
+
+.header-bar li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.header-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: inline-block;
+    height: 4rem;
+    line-height: 4rem;
+    color: var(--theme_5);
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.header-link-up:hover {
+    color: navy;
+}
+
+.header-link-down:hover {
+    color: rgb(175, 175, 255);
+}
+
+#menu-toggle {
+    cursor: pointer;
+}
+
+#menu-close {
+    transition-duration: 0.2s;
+    display: none;
+}
+
+#menu-close:hover {
+    transform: scale(1.2) rotate(90deg);
+}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+    .wide-screen {
+        display: inline-block !important;
+    }
+}
+
+@media (min-width: 1200px) {}

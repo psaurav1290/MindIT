@@ -1,0 +1,80 @@
+/* ---------------------------- */
+/* ----------- MENU ----------- */
+/* ---------------------------- */
+
+#menu {
+    position: absolute;
+    top: 64px;
+    width: 100%;
+    background-color: var(--menu_color);
+    border-bottom-left-radius: 2rem;
+    z-index: 10;
+    transform: translateY(-100%);
+    transition-duration: var(--menu_transition_time);
+}
+
+.menu-separator {
+    width: calc(100% - 2rem);
+    background-color: var(--menu_separator_color);
+}
+
+#menu-top-separator {
+    margin: 4rem 1rem 0 1rem;
+}
+
+#menu-bottom-separator {
+    margin: 2rem 1rem 2rem 1rem;
+}
+
+#profile-picture-container {
+    margin: 1rem 0;
+}
+
+#profile-picture {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+    margin: 2rem 0;
+}
+
+#profile-picture img {
+    height: 9rem;
+    width: 9rem;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgb(0, 0, 0);
+}
+
+#profile-details {
+    color: var(--theme_5);
+}
+
+#profile-name,
+#profile-alias {
+    text-align: center;
+}
+
+#profile-alias {
+    font-style: oblique;
+}
+
+.profile-btn {
+    margin: 2rem 2rem 0 0;
+}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+
+    #profile-name,
+    #profile-alias {
+        text-align: left;
+    }
+}
+
+@media (min-width: 1200px) {}
