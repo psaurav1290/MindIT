@@ -2,7 +2,7 @@
 /* -------- HEADER BAR -------- */
 /* ---------------------------- */
 
-.header-bar {
+#header-bar {
     background-color: var(--theme_3);
     height: 4rem;
     width: 100%;
@@ -12,15 +12,13 @@
     z-index: 20;
 }
 
-.header-logo {
+#header-logo {
     height: 5rem;
     width: 16rem;
-    max-width: calc(100% - 70px);
+    max-width: calc(100% - 140px);
     padding: 0rem 1rem;
-    background-image: linear-gradient(to top, rgb(212, 77, 18), rgb(230, 118, 70), rgb(241, 189, 167));
-    box-shadow: 0 0.01rem 0.2rem rgba(255, 255, 255, 0.7) inset;
+    box-shadow: 0 0.01rem 0.2rem var(--logo_box_shadow) inset;
     text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
-    /* box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.6); */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -31,9 +29,20 @@
     z-index: 30;
 }
 
-.header-logo:hover {
-    /* box-shadow: 0 0.01rem 0.2rem rgba(255, 255, 255, 0.7) inset;
-    text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0.6); */
+body.day #header-logo,
+body.day #footer-logo {
+    background-image: linear-gradient(to bottom, rgb(241, 189, 167), rgb(230, 118, 70), rgb(212, 77, 18));
+    background-image: linear-gradient(to bottom, rgb(255, 255, 226), rgb(230, 118, 70), rgb(212, 77, 18));
+}
+
+body.night #header-logo,
+body.night #footer-logo {
+    background-image: linear-gradient(to bottom, #41414166, #41414166, #41414166), linear-gradient(to bottom, rgb(241, 189, 167), rgb(230, 118, 70), rgb(212, 77, 18));
+    background-image: linear-gradient(to bottom, rgb(177, 129, 115), rgb(173, 107, 81), rgb(129, 66, 41));
+}
+
+#header-logo:hover {
+    transition-duration: 0s;
     box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.6);
     text-shadow: 0.1rem 0.1rem 0.3rem rgba(0, 0, 0, 0);
 }
@@ -41,7 +50,7 @@
 .header-logo-text,
 .footer-logo-text {
     display: block;
-    color: var(--theme_5);
+    color: var(--logo_text_color);
     margin: 0;
 }
 
@@ -53,13 +62,13 @@
     font-family: "Lucida Sans";
 }
 
-.header-bar a {
+#header-bar a {
     text-decoration: none;
 }
 
-.header-bar ul {
+#header-bar ul {
     height: 4rem;
-    padding: 0;
+    padding: 0 0 0 1rem;
     margin: 0;
     overflow: hidden;
     float: right;
@@ -70,7 +79,7 @@
     display: none !important;
 }
 
-.header-bar li {
+#header-bar li {
     display: inline-block;
     margin: 0;
     padding: 0;
@@ -88,14 +97,14 @@
 }
 
 .header-link-up:hover {
-    color: navy;
+    color: var(--header-link-up-hover-color);
 }
 
 .header-link-down:hover {
-    color: rgb(175, 175, 255);
+    color: var(--header-link-down-hover-color);
 }
 
-#menu-toggle {
+#menu-toggle * {
     cursor: pointer;
 }
 
@@ -104,8 +113,78 @@
     display: none;
 }
 
-#menu-close:hover {
-    transform: scale(1.2) rotate(90deg);
+#toggle-mode-container {
+    margin: 0;
+    position: relative;
+}
+
+#toggle-mode-text {
+    font-size: 0.6rem;
+    width: 4rem;
+    text-align: center;
+    position: absolute;
+    font-style: italic;
+    top: 1.5rem;
+    color: var(--theme_5);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#toggle-mode {
+    display: block;
+    cursor: pointer;
+    height: 1rem;
+    margin: 0 0 0 0;
+    padding: 0;
+    border-radius: 0.5rem;
+    width: 4rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: solid 0.1rem rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0.15rem 0.5rem rgba(0, 0, 0, 0.5) inset;
+}
+
+#toggle-mode-circle {
+    line-height: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--toggle-mode-circle-color);
+    box-shadow: 0 0 0.5rem var(--toggle-mode-circle-shadow) inset;
+    margin-top: -0.6rem;
+    transform: translate(-0.1rem, 0);
+    transform: var(--toggle-mode-circle-pos);
+}
+
+body.night #toggle-mode-circle {
+    animation: moveRight var(--mode-transition-time) forwards;
+}
+
+body.day #toggle-mode-circle {
+    animation: moveLeft var(--mode-transition-time) forwards;
+}
+
+@keyframes moveRight {
+    from {
+        transform: translate(-0.1rem, 0);
+    }
+
+    to {
+        transforn: translate(1.9rem, 0);
+    }
+}
+
+@keyframes moveLeft {
+    from {
+        transforn: translate(1.9rem, 0);
+    }
+
+    to {
+        transform: translate(-0.1rem, 0);
+    }
+}
+
+#toggle-mode:hover #toggle-mode-circle {
+    background-color: var(--header-link-down-hover-color);
+    box-shadow: 0 0 0.5rem var(--toggle-mode-circle-shadow) inset, 0 0 0.8rem var(--toggle-mode-circle-shadow-hover);
 }
 
 /* -------- Media Querries --------- */

@@ -11,6 +11,10 @@
     --menu_transition_time: 0.5s;
 }
 
+.mode-transition-element{
+    transition-duration: 1s;
+}
+
 .center-flex {
     display: flex;
     align-items: center;
@@ -19,28 +23,74 @@
 
 .day {
     color: black;
+    --text_color: black;
+
+    --logo_box_shadow: rgba(255, 255, 255, 0.7);
+    --logo_text_color: rgb(255, 255, 255);
+    --toggle-mode-circle-color: rgb(171, 171, 207);
+    --toggle-mode-circle-shadow: rgba(41, 41, 41, 0.7);
+    --toggle-mode-circle-shadow-hover: rgba(206, 227, 255, 0.6);
+    --header-link-up-hover-color: rgb(56, 56, 141);
+    --header-link-up-hover-color: navy;
+    --header-link-down-hover-color: rgb(175, 175, 255);
+    --toggle-mode-circle-pos: translate(-0.1rem, 0);
+
     --menu_color: rgba(0, 0, 0, 0.9);
+    --menu_color: rgba(55, 55, 90, 0.95);
+
     --menu_separator_color: rgb(201, 201, 201);
-    --main_separator_color: rgb(201, 201, 201);
-    --rules_url: "../img/rules-day.svg";
+    --main-separator-color: rgba(0, 0, 0, 0.1);
+
+    --field_box_shadow_focus: rgba(255, 102, 0, 0.6);
+    --notepad_border_color: rgba(255, 123, 0, 0.6);
+    --notepad-text-color: black;
+
+    --theme_4: #7B8CDE;
+    --theme_3: #9999C3;
     --theme_1: #E88d67;
     --theme_2: #BB999C;
-    --theme_3: #9999C3;
-    --theme_4: #7B8CDE;
     --theme_5: #C0E6DE;
+
+    --copyright: rgb(43, 43, 43);
 }
 
 .night {
-    background-color: rgb(70, 70, 70);
-    color: rgb(158, 158, 158);
+    color: rgb(190, 190, 190);
+    --text_color: rgb(190, 190, 190);
+    --text_color: rgb(147, 190, 170);
+
+    --logo_box_shadow: rgba(0, 0, 0, 0);
+    --logo_text_color: rgb(221, 221, 221);
+    --toggle-mode-circle-color: rgb(102, 102, 102);
+    --toggle-mode-circle-shadow: rgba(0, 0, 0, 0.8);
+    --toggle-mode-circle-shadow-hover: rgba(0, 0, 0, 0.5);
+    --header-link-up-hover-color: rgb(111, 111, 160);
+    --header-link-down-hover-color: rgb(142, 142, 182);
+    --toggle-mode-circle-pos: translate(1.9rem, 0);
+
+    --menu_color: rgba(30, 30, 30, 0.95);
+
     --menu_separator_color: rgb(201, 201, 201);
-    --main_separator_color: rgb(201, 201, 201);
-    --rules_url: "../img/rules-night.svg";
-    --theme_1: #E88d67;
-    --theme_2: #BB999C;
-    --theme_3: #2b2b33;
-    --theme_4: #262a41;
-    --theme_5: #C0E6DE;
+    --main-separator-color: rgba(255, 255, 255, 0.1);
+
+    --field_box_shadow_focus: rgba(0, 0, 0, 0.7);
+    --notepad_border_color: rgba(0, 0, 0, 0.7);
+    --notepad-text-color: rgb(173, 173, 173);
+    --notepad-text-color: rgb(124, 160, 143);
+
+    --theme_4: rgb(17, 17, 17);
+    --theme_3: rgb(51, 51, 51);
+    --theme_1: rgb(85, 85, 85);
+    --theme_2: rgb(119, 119, 119);
+    --theme_5: rgb(153, 153, 153);
+
+    --theme_4: rgb(17, 17, 17);
+    --theme_3: rgb(51, 51, 51);
+    --theme_1: rgb(85, 85, 85);
+    --theme_2: rgb(119, 119, 119);
+    --theme_5: rgb(153, 153, 153);
+
+    --copyright: rgb(130, 130, 130);
 }
 
 body {
@@ -50,4 +100,8 @@ body {
     height: 100%;
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
+}
+
+body.night {
+    background-color: rgb(31, 31, 31);
 }

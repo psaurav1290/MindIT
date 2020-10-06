@@ -1,0 +1,189 @@
+/* ---------------------------- */
+/* ------- LIST WRAPPER ------- */
+/* ---------------------------- */
+
+#main-separator-2 {
+    margin-bottom: 1.5rem;
+}
+
+#title-container {
+    width: 100%;
+    margin: 0;
+}
+
+#title-container-name {
+    width: 100%;
+    text-align: right;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Lucida Sans";
+    padding: 0 0rem;
+    color: var(--text_color);
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    outline: 0;
+}
+
+#title-container-name:focus,
+textarea:focus {
+    border-radius: 0.4rem;
+    padding-right: 1rem;
+    box-shadow: 0 0 0.5rem var(--field_box_shadow_focus);
+}
+
+#title-container-time {
+    font-style: oblique;
+    color: gray;
+    text-align: right;
+    margin-top: 0.5rem;
+}
+
+#main-container {
+    padding: 0.1rem;
+}
+
+#save-btn {
+    float: right;
+}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    .separator {
+        margin: 0.5rem 1rem;
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}
+
+
+
+/* ---------------------------- */
+/* --------- EDITABLE --------- */
+/* ---------------------------- */
+
+#notepad {
+    background-repeat: repeat;
+    background-size: 32px 32px;
+    min-height: 100vh;
+    overflow: auto;
+    padding: 3rem 1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    border-right: 1px solid var(--notepad_border_color);
+    border-bottom: 1px solid var(--notepad_border_color);
+    border-radius: 2rem;
+    box-shadow: -0.5rem -0.5rem 1.5rem -1rem black;
+    position: relative;
+}
+
+body.day #notepad {
+    background-image: url("../img/rules-day.svg");
+}
+
+body.night #notepad {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/rules-night.svg");
+}
+
+.vertical-rule {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background-color: var(--notepad_border_color);
+}
+
+#vertical-rule-1 {
+    left: 80px;
+}
+
+#vertical-rule-2 {
+    left: 84px;
+}
+
+/* #notepad * {
+    border: 0.5px solid black;
+} */
+
+.cell {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-items: flex-start;
+    padding: 0.25rem 0;
+}
+
+.columnBox {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    display: inline-block;
+    margin: 0 1rem 0 0;
+}
+
+.box {
+    display: inline-block;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    margin-top: 0;
+    border-radius: 20%;
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+body.day .box {
+    background-image: url(../img/squncheck3-day.svg);
+}
+
+body.night .box {
+    background-image: url(../img/squncheck3-night.svg);
+}
+
+body.day .checked {
+    background-image: url(../img/sqcheck3-day.svg);
+}
+
+body.night .checked {
+    background-image: url(../img/sqcheck4-night.svg);
+}
+
+.columnLine {
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    width: calc(100% - 77px);
+    min-height: 45px;
+    display: inline-block;
+    margin: 0 0 0 1rem;
+    background-color: rgba(122, 52, 124, 0);
+}
+
+.line {
+    color: var(--notepad-text-color);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: rgb(255, 217, 0, 0);
+    outline: 0;
+}
+
+/* -------- Media Querries --------- */
+
+@media (min-width: 576px) {}
+
+@media (min-width: 768px) {
+    .columnBox {
+        margin: 0 2rem 0 0;
+    }
+
+    .columnLine {
+        width: calc(100% - 77px);
+    }
+}
+
+@media (min-width: 992px) {}
+
+@media (min-width: 1200px) {}

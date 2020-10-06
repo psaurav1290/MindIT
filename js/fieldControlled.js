@@ -9,7 +9,8 @@ var object = [
         extraSpace: 0,
         limit: 5000
     },
-    shiftPressed = 0
+    shiftPressed = 0,
+    nightMode = true
 
 setSelectionRange = (input, selectionStart, selectionEnd) => {
     if (input.setSelectionRange) {
@@ -111,11 +112,45 @@ loadContent = () => {
     object.forEach(line => appendNewCell(line[0], line[1]))
 }
 
-$(window).resize(event => {
-    $(".line").prev().detach()
-    $(".line").removeAttr("style")
-    $(".line").autoResize2(resizeOptions)
-})
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// 
+// 
+// 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+// 
+// ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+toggleMode = () => {
+    $("body").toggleClass("night").toggleClass("day")
+    if (nightMode) {
+        nightMode = !nightMode
+    } else {
+        nightMode = !nightMode
+    }
+}
+$("#toggle-mode").click(toggleMode)
+
+showMenu = () => {
+    $("#menu").css("transform", "translateY(0)")
+    // $(".header-link").css("transform", "translateY(100%)")
+    $("#header-bar-list").css("transform", "translateY(100%)")
+    $("#header-bar-list .header-link-up").toggleClass("header-link-up").toggleClass("header-link-down")
+    $("#menu-open").hide()
+    $("#menu-close").show()
+}
+$("#menu-open").click(showMenu)
+
+hideMenu = () => {
+    $("#menu").css("transform", "translateY(-100%)")
+    // $(".header-link").css("transform", "translateY(0)")
+    $("#header-bar-list").css("transform", "translateY(0)")
+    $("#header-bar-list .header-link-down").toggleClass("header-link-up").toggleClass("header-link-down")
+    $("#menu-open").show()
+    $("#menu-close").hide()
+}
+$("#menu-close, #main-wrapper").click(hideMenu)
 
 setTime = () => {
     now = new Date()
@@ -123,16 +158,39 @@ setTime = () => {
     $("#title-container-time").text("Last modified: " + now.toDateString() + ", " + now.toLocaleTimeString())
 }
 
-determineTheme = () => {
-    if ($('body').classList == "day")
-        $('#notepad').css("background-image", 'url(".. / img / rules - day.svg")')
+setTheme = () => {
+    if ($('body').attr("class") == "day") {
+        nightMode = false
+        // $(".night").toggleClass("night").toggleClass("day")
+    } else {
+        nightMode = true
+        // $(".day").toggleClass("night").toggleClass("day")
+    }
 }
 
+setFooter = () => {
+    if (document.documentElement.scrollHeight > document.documentElement.clientHeight)
+        $("#footer-bar").css("position", "static")
+    else
+        $("#footer-bar").css({
+            "position": "fixed",
+            "bottom": "0"
+        })
+}
+
+$(window).resize(event => {
+    $(".line").prev().detach()
+    $(".line").removeAttr("style")
+    $(".line").autoResize2(resizeOptions)
+    $("#footer-bar").css("position", "static")
+    // setFooter()
+})
+
 window.onload = () => {
-    $("textarea").autoResize2(resizeOptions)
+    setTheme()
     loadContent()
-    determineTheme()
     setTime()
+    setFooter()
 }
 
 /*

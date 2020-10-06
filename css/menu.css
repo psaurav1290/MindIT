@@ -8,6 +8,7 @@
     width: 100%;
     background-color: var(--menu_color);
     border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
     position: fixed;
     z-index: 10;
     transform: translateY(-100%);
@@ -43,9 +44,10 @@
 }
 
 #profile-picture img {
-    height: 9rem;
-    width: 9rem;
+    height: 9.1rem;
+    width: 9.1rem;
     border-radius: 50%;
+    border: solid transparent 1px;
     box-shadow: 0px 0px 5px rgb(0, 0, 0);
 }
 

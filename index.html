@@ -27,14 +27,24 @@
     <meta name="theme-color" content="#9999C3">
 </head>
 
-<body class="day">
-    <header class="header-bar">
-        <a href="#" class="header-logo">
+<body class="day mode-transition-element">
+    <header id="header-bar" class="mode-transition-element">
+        <a href="#" id="header-logo" class="">
             <h1 class="header-logo-text mind">Mind</h1>
             <h1 class="header-logo-text it">IT</h1>
         </a>
         <nav>
             <ul id="header-bar-list">
+                <li class="">
+                    <div id="toggle-mode-container">
+                        <div id="toggle-mode" class="header-link-up">
+                            <div id="toggle-mode-circle" class="mode-transition-element"></div>
+                        </div>
+                        <div id="toggle-mode-text">
+                            Night mode
+                        </div>
+                    </div>
+                </li>
                 <li class="wide-screen">
                     <a href="#" class="header-link header-link-up">
                         New Note
@@ -66,7 +76,7 @@
                             <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z" />
                             <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z" />
                             <!-- <rect x="-2.73" y="6.58" width="21.45" height="2.83" rx="1.42" transform="translate(-3.31 8) rotate(-45)" />
-                            <rect x="-2.73" y="6.58" width="21.45" height="2.83" rx="1.42" transform="translate(8 19.31) rotate(-135)" /> -->
+              <rect x="-2.73" y="6.58" width="21.45" height="2.83" rx="1.42" transform="translate(8 19.31) rotate(-135)" /> -->
                         </svg>
                     </span>
                 </li>
@@ -106,10 +116,10 @@
     </div>
 
     <div id="main-wrapper" class="container-fluid">
+        <link rel="stylesheet" href="./css/list.css">
         <hr id="main-separator-1" class="main-separator">
         <div id="title-container" class="row">
             <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
-                <!-- <textarea id="title-container-name" rows="1">Note Name</textarea> -->
                 <input id="title-container-name" type="text" value="Note Name">
                 <div id="title-container-time">Last Modified : 30 Sept 2020, 00:55:12am</div>
             </div>
@@ -117,26 +127,26 @@
         <hr id="main-separator-2" class="main-separator">
         <div class="row">
             <div id="main-container" class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
-                <div id="notepad">
+                <div id="notepad" class="mode-transition-element">
                     <div id="vertical-rule-1" class="vertical-rule"></div>
                     <div id="vertical-rule-2" class="vertical-rule"></div>
                 </div>
             </div>
         </div>
-        <!-- <hr id="main-separator-3" class="main-separator"> -->
+        <hr id="main-separator-3" class="main-separator">
         <div id="title-container" class="row">
             <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-8 offset-xl-2">
                 <button id="save-btn" class="btn btn-success btn-lg">Save</button>
             </div>
         </div>
-        <!-- <hr id="main-separator-4" class="main-separator"> -->
+        <hr id="main-separator-4" class="main-separator">
     </div>
 
-    <footer class="footer-bar container-fluid">
+    <footer id="footer-bar" class="container-fluid mode-transition-element">
         <div class="row">
             <!-- <div class="footer-pad container-fluid mt-4"></div> -->
-            <div class="footer-logo-section col-12 col-sm-12 col-md-4 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1 mr-lg-5">
-                <a href="#" class="footer-logo">
+            <div id="footer-logo-section" class="col-12 col-sm-12 col-md-4 col-lg-3 offset-lg-1 col-xl-3 offset-xl-1 mr-lg-5">
+                <a href="#" id="footer-logo" class="">
                     <h1 class="footer-logo-text mind">Mind</h1>
                     <h1 class="footer-logo-text it">IT</h1>
                 </a>
@@ -146,61 +156,61 @@
                 </ul>
                 <p class="font-italic">MindIT is an easy to use memo app that helps you to enlist and manage tasks. Checklists are always handy tool whether it is shopping list or assignments given by your boss.</p>
                 <!-- <div class="row">
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                        <nav class="footer-nav">
-                            <ul class="footer-list">
-                                <li>
-                                    <a href="#" class="footer-link">
-                                        All
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-link">
-                                        New
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-link">
-                                        Login
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="footer-link">
-                                        Logout
-                                    </a>
-                                </li>
-                            </ul>
-                    </div>
-                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                        <ul class="footer-list footer-contacts">
-                            <li>
-                                <a href="#">
-                                    Github
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Pintrest
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    LinkedIn
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Twitter
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    YouTube
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <nav class="footer-nav">
+              <ul class="footer-list">
+                <li>
+                  <a href="#" class="footer-link">
+                    All
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">
+                    New
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">
+                    Login
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="footer-link">
+                    Logout
+                  </a>
+                </li>
+              </ul>
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+            <ul class="footer-list footer-contacts">
+              <li>
+                <a href="#">
+                  Github
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Pintrest
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  LinkedIn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Twitter
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  YouTube
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div> -->
             </div>
             <div class="copyright col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="copyright container-fluid">
@@ -212,18 +222,17 @@
     <!-- <script src="./js/raw.js"></script> -->
     <script src="./js/corrected.autoresize.jquery.js"></script>
     <script src="./js/autoresize.jquery.js"></script>
-    <script src="./js/function.js"></script>
     <script src="./js/fieldControlled.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-        </script> -->
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    </script> -->
 </body>
 
 </html>
