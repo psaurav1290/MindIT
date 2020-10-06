@@ -126,8 +126,10 @@ toggleMode = () => {
     $("body").toggleClass("night").toggleClass("day")
     if (nightMode) {
         nightMode = !nightMode
+        $('meta[name=theme-color]').attr('content', '#9999C3');
     } else {
         nightMode = !nightMode
+        $('meta[name=theme-color]').attr('content', 'rgb(51, 51, 51)');
     }
 }
 $("#toggle-mode").click(toggleMode)
