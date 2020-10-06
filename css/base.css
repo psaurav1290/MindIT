@@ -11,8 +11,8 @@
     --menu_transition_time: 0.5s;
 }
 
-.mode-transition-element{
-    transition-duration: 1s;
+.mode-transition-element {
+    transition-duration: 0.5s;
 }
 
 .center-flex {

@@ -8,12 +8,11 @@
     width: 100%;
     background-color: var(--menu_color);
     border-bottom-left-radius: 2rem;
-    border-top-left-radius: 2rem;
     position: fixed;
     z-index: 10;
     transform: translateY(-100%);
     transition-duration: var(--menu_transition_time);
-    max-height: calc(100vh - 5rem);
+    max-height: calc(80vh);
     overflow: auto;
 }
 
