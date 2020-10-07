@@ -152,6 +152,7 @@ body.night #footer-logo {
     margin-top: -0.6rem;
     transform: translate(-0.1rem, 0);
     transform: var(--toggle-mode-circle-pos);
+    transition-duration: 0.5s;
 }
 
 body.night #toggle-mode-circle {
