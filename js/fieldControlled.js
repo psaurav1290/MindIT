@@ -161,7 +161,7 @@ setTime = () => {
 }
 
 setTheme = () => {
-    if ($('body').attr("class") == "day mode-transition-element") {
+    if ($('body').attr("class") == "day") {
         nightMode = false
         // $(".night").toggleClass("night").toggleClass("day")
     } else {
